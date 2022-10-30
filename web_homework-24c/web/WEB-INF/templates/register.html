@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <script>
+        function conf(){
+            const name=document.getElementById("name").value;
+            const author=document.getElementById("author").value;
+            const publish=document.getElementById("publish").value;
+            var date=document.getElementById("date").value;
+            const num=document.getElementById("num").value;
+            if(name==""||author==""||publish==""||date==""||num==""){
+                alert("输入不能为空");
+                return;
+            }
+            if(num < 0){
+                alert("库存数量不能小于0");
+            }
+            var nowDate=new Date();
+            var nowYear=nowDate.getFullYear();
+            var nowMonth=nowDate.getMonth();
+            var inputYear=date.split("-")[0];
+            var inputMonth=date.split("-")[1];
+            if(inputYear > nowYear){
+                alert("出版日期错误");
+                return;
+            }else if(inputYear == nowYear){
+                if(inputMonth > nowMonth+1){
+                    alert("出版日期错误");
+                    return;
+                }
+            }
+            alert("信息无误，可进行提交");
+        }
+    </script>
+    <style>
+        .input input{
+            display: block;
+            border-bottom: 2px black solid;
+            background-color: transparent;
+            font-size: 17px;
+        }
+    </style>
+</head>
+<body>
+<form action="http://localhost:8080/getregist" method="post">
+    <div class="input">
+        <span>图书名称：</span>
+        <input type="text" placeholder="请输入图书名称" id="name" name="name"/>
+        <span>作者：</span>
+        <input type="text" placeholder="请输入作者" id="author" name="author"/>
+        <span>出版社：</span>
+        <input type="text" placeholder="请输入出版社" id="publish" name="publish"/>
+        <span>出版日期：</span>
+        <input type="text" placeholder="请输入日期(格式：yyyy-mm)" id="date" name="date"/>
+        <span>库存数量：</span>
+        <input type="number" placeholder="请输入库存数量" id="num" name="num"/>
+        <span>选择封面：</span>
+        <input type="file" name="picture" id="picture">
+    </div><br>
+    <input type="button" onclick="conf()" value="校验输入信息" name="confirm">
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>

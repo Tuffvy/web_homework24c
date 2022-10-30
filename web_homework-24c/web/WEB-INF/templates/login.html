@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <script>
+        function skip(){
+            window.location.href = "booklist";
+        }
+        function verify(){
+            const user = document.getElementById("user").value;
+            const psd = document.getElementById("psd").value;
+            const reg = /^\w{6,20}$/;
+            if(!reg.test(user)){
+                alert("账号格式错误(6-20位字母或数字)");
+                return;
+            }
+            if(!reg.test(psd)){
+                alert("密码格式错误(6-20位字母或数字)");
+                return;
+            }
+            skip();
+        }
+    </script>
+    <style>
+        .container{
+            width: 500px;
+            height: auto;
+            margin:auto auto;
+            text-align: center;
+        }
+
+        .word{
+            margin-top:20px;
+        }
+
+        input.change{
+            display: block;
+            margin:20px auto;
+            width: 240px;
+            height: 30px;
+            border: none;
+            border-bottom: 2px black solid;
+            background-color: transparent;
+            font-size: 17px;
+            padding: 0 10px;
+        }
+        input.change{
+            position: relative;
+        }
+        span{
+            position: absolute;
+            left: 40px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="word">
+        <h1>管理员登录系统</h1>
+    </div>
+    <div class="input">
+        <form action="http://localhost:8080/checklogin" method="post">
+            <span>用户名：</span>
+            <input class="change" type="text" placeholder="请输入用户名" id="user" name="user"/>
+            <span>密 码：</span>
+            <input class="change" type="password" placeholder="请输入密码" id="psd" name="psd"/>
+            <input type="submit" value="登录">
+        </form>
+    </div>
+</div>
+</body>
+</html>

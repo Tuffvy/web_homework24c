@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BookList</title>
+    <script>
+        function register(){
+            window.location.href = "register";
+        }
+    </script>
+    <style>
+        button{
+            position: relative;
+            margin-left: 270px;
+            margin-top: 10px;
+            font-size: 1.4rem;
+            background-color: #00b3b4;
+        }
+        tr{
+            text-align: center;
+        }
+        table{
+            border: 2px solid #000;
+        }
+    </style>
+</head>
+<body>
+<table border="2">
+    <tr>
+        <th>封面预览</th>
+        <th>名称</th>
+        <th>作者</th>
+        <th>出版社</th>
+        <th>出版日期</th>
+        <th>库存数量</th>
+    </tr>
+    <tr>
+        <td><img src="../../images/book1.png"></td>
+        <td th:text="${name0}"></td>
+        <td th:text="${author0}"></td>
+        <td th:text="${publish0}"></td>
+        <td th:text="${date0}"></td>
+        <td th:text="${number0}"></td>
+    </tr>
+    <tr>
+        <td><img src="../../images/book2.jpg"></td>
+        <td th:text="${name1}"></td>
+        <td th:text="${author1}"></td>
+        <td th:text="${publish1}"></td>
+        <td th:text="${date1}"></td>
+        <td th:text="${number1}"></td>
+    </tr>
+</table>
+<button id="regist" onclick="register()">登记新的图书</button>
+</body>
+</html>

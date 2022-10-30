@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GetRegist</title>
+    <style>
+        p{
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+<p>新的图书信息如下：</p></br>
+<p>名称：</p><p th:text="${name}"></p></br>
+<p>作者：</p><p th:text="${author}"></p></br>
+<p>出版社：</p><p th:text="${publish}"></p></br>
+<p>出版日期：</p><p th:text="${date}"></p></br>
+<p>库存数量：</p><p th:text="${number}"></p></br>
+<p>上传的封面：</p><p th:text="${picture}"></p></br>
+</body>
+</html>
