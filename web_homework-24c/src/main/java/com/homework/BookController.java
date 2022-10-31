@@ -6,10 +6,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import java.io.File;
 
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
@@ -60,13 +63,23 @@ public class BookController {
     }
 
     @RequestMapping(value = "/getregist",method = POST)
-    public String getRegist(String name, String author, String publish, String date, int num, @RequestParam("picture") Object picture,Model model){
+    public String getRegist(String name, String author, String publish, String date, int num, @RequestParam("picture") MultipartFile picture, Model model)throws Exception{
         model.addAttribute("name",name);
         model.addAttribute("author",author);
         model.addAttribute("publish",publish);
         model.addAttribute("date",date);
         model.addAttribute("number",num);
-        model.addAttribute("picture",picture.toString());
+
+        String originalFilename = picture.getOriginalFilename();
+        String path = "/uploads";
+        File file = new File(path);
+        if(!file.exists()){
+            file.mkdirs();
+        }
+        String destFilePath = file.getAbsolutePath()+"\\"+originalFilename;
+        File destFile = new File(destFilePath);
+        model.addAttribute("path",destFilePath);
+        picture.transferTo(destFile);
         return "getregist";
     }
 
