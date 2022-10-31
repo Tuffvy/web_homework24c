@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89be6246-2c14-4815-a5fd-9904abfc1f6e" name="Changes" comment="web homework 24c" />
+    <list default="true" id="89be6246-2c14-4815-a5fd-9904abfc1f6e" name="Changes" comment="web homework 24cc" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -179,7 +179,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1667135388125</updated>
-      <workItem from="1667135389555" duration="12116000" />
+      <workItem from="1667135389555" duration="12250000" />
     </task>
     <task id="LOCAL-00001" summary="web homework 24c">
       <created>1667147207986</created>
@@ -188,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667147207986</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="web homework 24cc">
+      <created>1667147645426</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1667147645426</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,6 +215,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="web homework 24c" />
-    <option name="LAST_COMMIT_MESSAGE" value="web homework 24c" />
+    <MESSAGE value="web homework 24cc" />
+    <option name="LAST_COMMIT_MESSAGE" value="web homework 24cc" />
   </component>
 </project>
